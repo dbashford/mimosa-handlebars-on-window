@@ -20,9 +20,7 @@ exports.validate = function(config, validators) {
   var errors = [];
 
   if ( validators.ifExistsIsObject( errors, "handlebarsOnWindow config", config.handlebarsOnWindow ) ) {
-    if ( validators.ifExistsIsString( errors, "handlebarsOnWindow.libName", config.handlebarsOnWindow.libName ) ) {
-      config.handlebarsOnWindow.isHandlebars = new RegExp( "\/" + config.handlebarsOnWindow.libName + "$" );
-    }
+    validators.ifExistsIsString( errors, "handlebarsOnWindow.libName", config.handlebarsOnWindow.libName );
     validators.ifExistsIsString( errors, "handlebarsOnWindow.replace", config.handlebarsOnWindow.replace );
   }
 
