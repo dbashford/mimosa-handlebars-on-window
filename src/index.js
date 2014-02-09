@@ -1,7 +1,7 @@
 var path = require( 'path' )
   , config = require( './config' )
-  , logger = require( 'logmimosa' )
-  , hasHandlebars = /window.Handlebars/;
+  , hasHandlebars = /window.Handlebars/
+  , logger = null;
 
 var _attach = function ( mimosaConfig, options, next ) {
   var hasFiles = options.files && options.files.length > 0;
@@ -27,6 +27,7 @@ var _attach = function ( mimosaConfig, options, next ) {
 };
 
 var registration = function (mc, register) {
+  logger = mc.log;
   register( ['add','update','buildFile'], 'afterCompile', _attach, mc.extensions.javascript );
 };
 
