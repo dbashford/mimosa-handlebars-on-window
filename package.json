@@ -1,6 +1,6 @@
 {
   "name": "mimosa-handlebars-on-window",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/dbashford/mimosa-handlebars-on-window",
   "author": "David Bashford",
   "description": "A Mimosa module for modifying handlebars.js and attaching Handlebars to the window",
