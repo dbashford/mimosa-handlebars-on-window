@@ -3,17 +3,17 @@
 exports.defaults = function() {
   return {
     handlebarsOnWindow: {
-      libName: 'handlebars.js',
+      libName: "handlebars.js",
       replace: "__exports__ = Handlebars"
     }
   };
 };
 
 exports.placeholder = function() {
-  return "\t\n\n"+
-         "  # handlebarsOnWindow:\n" +
-         "    # libName: 'handlebars.js'             # file name of handlebars library\n" +
-         "    # replace: '__exports__ = Handlebars'  # code to prepend 'window.Handlebars = ' to\n";
+  return "\t\n\n" +
+         "  handlebarsOnWindow:\n" +
+         "    libName: 'handlebars.js'             # file name of handlebars library\n" +
+         "    replace: '__exports__ = Handlebars'  # code to prepend 'window.Handlebars = ' to\n";
 };
 
 exports.validate = function(config, validators) {
