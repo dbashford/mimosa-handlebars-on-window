@@ -14,8 +14,8 @@ var _attach = function ( mimosaConfig, options, next ) {
           mimosaConfig.log.info( "mimosa-handlebars-on-window detected that window.Handlebars already exists in [[ " +  mimosaConfig.handlebarsOnWindow.libName + " ]], you may not need this module any longer" );
         } else {
           file.outputFileText = file.outputFileText.replace(
-            mimosaConfig.handlebarsOnWindow.replace,
-            "window.Handlebars = " + mimosaConfig.handlebarsOnWindow.replace );
+            new RegExp("(" + mimosaConfig.handlebarsOnWindow.replace + ")", "g"),
+            "window.Handlebars = $1");
         }
       }
     });
